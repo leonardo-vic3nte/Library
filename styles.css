@@ -81,8 +81,10 @@ main {
   max-width: var(--container-width);
   margin: 0 auto;
   width: 100%;
+  margin-top: var(--space-xl);
   display: grid;
-  grid-template-columns: auto minmax(500px, 1fr);
+  grid-template-columns: auto minmax(auto, 1fr);
+  gap: var(--space-md);
 }
 main #add-book-form {
   max-width: fit-content;
@@ -95,6 +97,21 @@ main #add-book-form h2 {
 main #add-book-form label {
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-md);
+}
+main .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  gap: var(--space-lg);
+  justify-content: center;
+}
+main .cards-container .card {
+  font-size: var(--fs-lg);
+  border: 1px solid var(--primary-blue-400);
+  border-radius: var(--space-xs);
+  padding: var(--space-xs);
+}
+main .cards-container .card h2 {
+  color: var(--primary-blue-400);
 }
 
 /*# sourceMappingURL=styles.css.map */
