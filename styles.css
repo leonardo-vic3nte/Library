@@ -56,6 +56,9 @@ html {
 
 body {
   flex-grow: 1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0 var(--space-lg);
   font-family: var(--default-font);
   font-size: var(--fs-base-size);
   background-color: var(--background-color);
@@ -65,13 +68,33 @@ body {
 header {
   max-width: var(--container-width);
   margin: 0 auto;
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: var(--fs-xxl);
+}
+
+main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(500px, 1fr);
+}
+main #add-book-form {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+main #add-book-form h2 {
+  font-size: var(--fs-xl);
+}
+main #add-book-form label {
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-md);
 }
 
 /*# sourceMappingURL=styles.css.map */

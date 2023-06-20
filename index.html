@@ -23,5 +23,44 @@
 				<h1>library📘</h1>
 			</div>
 		</header>
+
+		<main>
+			<form id="add-book-form">
+				<h2>Add Book</h2>
+
+				<label for="title"></label>
+				<input
+					type="text"
+					name="title"
+					id="title"
+					placeholder="Title"
+					required />
+
+				<label for="author"></label>
+				<input
+					type="text"
+					name="author"
+					id="author"
+					placeholder="Author"
+					required />
+
+				<label for="pages"></label>
+				<input
+					type="number"
+					name="nrPages"
+					id="pages"
+					placeholder="100"
+					required />
+
+				<label for="read">
+					Have you read it?
+					<input type="checkbox" name="isRead" id="read" />
+				</label>
+
+				<button>Submit</button>
+			</form>
+
+			<div class="cards-container"></div>
+		</main>
 	</body>
 </html>

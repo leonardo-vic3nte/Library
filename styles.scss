@@ -69,6 +69,10 @@ html {
 
 body {
 	flex-grow: 1;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	padding: 0 var(--space-lg);
+
 	font-family: var(--default-font);
 	font-size: var(--fs-base-size);
 
@@ -76,17 +80,37 @@ body {
 	color: var(--neutral-zinc-100);
 }
 
-
-header{
+header {
 	@include container;
-	margin-top: var(--space-lg);
+	margin-top: var(--space-xl);
 
-	.logo{
+	.logo {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		font-size: var(--fs-xxl);
-
 	}
+}
 
+main {
+	@include container;
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: auto minmax(500px, 1fr);
+
+	#add-book-form {
+		max-width: fit-content;
+		display: flex;
+		flex-direction: column;
+
+		h2 {
+			font-size: var(--fs-xl);
+		}
+
+		label {
+			font-weight: var(--fw-semi-bold);
+			font-size: var(--fs-md);
+		}
+	}
 }
