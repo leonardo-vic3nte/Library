@@ -1,3 +1,58 @@
+:root {
+  --container-width: 1200px;
+  --default-font: "Outfit", sans-serif;
+  --background-color: #1c1b22;
+  /* Primary Colors */
+  --primary-violet-100: #f0e7ff;
+  --primary-violet-200: #e4d3ff;
+  --primary-violet-300: #cfb0ff;
+  --primary-violet-400: #b17eff;
+  --primary-violet-500: #8a3dff;
+  --primary-violet-600: #7c2af3;
+  --primary-violet-700: #691ad6;
+  --primary-violet-800: #5b1aaf;
+  /* Neutral Colors */
+  --primary-zinc-100: #f4f4f5;
+  --primary-zinc-200: #e4e4e7;
+  /* Accent Colors */
+  --accent-red: #be123c;
+  --accent-blue: #1d4ed8;
+  --accent-green: #047857;
+  /* Font Sizes */
+  --factor: 1.2;
+  --fs-small: calc(var(--fs-base) / var(--factor));
+  --fs-base: 18px;
+  --fs-md: calc(var(--fs-base) * var(--factor));
+  --fs-lg: calc(var(--fs-md) * var(--factor));
+  --fs-xl: calc(var(--fs-lg) * var(--factor));
+  /* Font Weights */
+  --fw-normal: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  /* Spacing */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 52px;
+  --space-xxl: 84px;
+}
 
+*,
+*::before,
+*::after {
+  margin: 0;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+}
 
 /*# sourceMappingURL=styles.css.map */
