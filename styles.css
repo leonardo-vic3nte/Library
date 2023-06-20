@@ -62,4 +62,19 @@ body {
   color: var(--neutral-zinc-100);
 }
 
+header {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  margin-top: var(--space-lg);
+}
+header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-xxl);
+}
+header .logo img {
+  height: var(--fs-xxl);
+}
+
 /*# sourceMappingURL=styles.css.map */

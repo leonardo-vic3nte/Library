@@ -75,3 +75,21 @@ body {
 	background-color: var(--background-color);
 	color: var(--neutral-zinc-100);
 }
+
+
+header{
+	@include container;
+	margin-top: var(--space-lg);
+
+	.logo{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: var(--fs-xxl);
+
+		img{
+			height: var(--fs-xxl);
+		}
+	}
+
+}
