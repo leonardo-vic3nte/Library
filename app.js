@@ -1,3 +1,7 @@
+/* Selectors */
+const bookForm = document.querySelector("#add-book-form");
+const errorMsg = document.querySelector(".error");
+
 const library = [];
 
 function isInLibrary(bookToAdd) {
@@ -27,8 +31,10 @@ function createBookObject(event) {
 	);
 
 	if (isInLibrary(newBook)) {
-		alert("Book already exists in library");
+		errorMsg.classList.add("true");
 		return;
+	} else {
+		errorMsg.classList.remove("true");
 	}
 
 	library.push(newBook);
@@ -82,5 +88,4 @@ function createBookCard(book) {
 	cardsContainer.appendChild(container);
 }
 
-const bookForm = document.querySelector("#add-book-form");
 bookForm.addEventListener("submit", createBookObject);

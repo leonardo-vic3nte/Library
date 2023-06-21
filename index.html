@@ -25,9 +25,8 @@
 		</header>
 
 		<div class="side-bar">
+			<h2>Add Book</h2>
 			<form id="add-book-form">
-				<h2>Add Book</h2>
-
 				<label for="title"></label>
 				<input
 					type="text"
@@ -49,7 +48,7 @@
 					type="number"
 					name="nrPages"
 					id="pages"
-					placeholder="100"
+					placeholder="15"
 					required />
 
 				<label for="read">
@@ -64,6 +63,8 @@
 
 				<button type="submit">Submit</button>
 			</form>
+
+			<p class="error">This book is already in the library!</p>
 		</div>
 
 		<main>
