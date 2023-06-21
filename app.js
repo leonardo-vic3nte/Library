@@ -1,4 +1,5 @@
 /* Selectors */
+const cardsContainer = document.querySelector(".cards-container");
 const bookForm = document.querySelector("#add-book-form");
 const errorMsg = document.querySelector(".error");
 
@@ -17,31 +18,11 @@ function Book(title, author, nrPages, isRead) {
 	this.isRead = isRead;
 }
 
-function createBookObject(event) {
-	event.preventDefault();
-
-	const formData = new FormData(event.target);
-	const formDataObj = Object.fromEntries(formData.entries());
-
-	const newBook = new Book(
-		formDataObj.title,
-		formDataObj.author,
-		formDataObj.nrPages,
-		formDataObj.isRead
-	);
-
-	if (isInLibrary(newBook)) {
-		errorMsg.classList.add("true");
-		return;
-	} else {
-		errorMsg.classList.remove("true");
-	}
-
-	library.push(newBook);
-	createBookCard(newBook);
+function displayBook(book) {
+	cardsContainer.appendChild(book);
 }
 
-function createBookCard(book) {
+function createBookHTML(book) {
 	const container = document.createElement("div");
 	container.classList.add("card");
 
@@ -84,8 +65,31 @@ function createBookCard(book) {
 	removeBtn.textContent = "Remove";
 	container.appendChild(removeBtn);
 
-	const cardsContainer = document.querySelector(".cards-container");
-	cardsContainer.appendChild(container);
+	return container;
+}
+
+function createBookObject(event) {
+	event.preventDefault();
+
+	const formData = new FormData(event.target);
+	const formDataObj = Object.fromEntries(formData.entries());
+
+	const newBook = new Book(
+		formDataObj.title,
+		formDataObj.author,
+		formDataObj.nrPages,
+		formDataObj.isRead
+	);
+
+	if (isInLibrary(newBook)) {
+		errorMsg.classList.add("true");
+		return;
+	} else {
+		errorMsg.classList.remove("true");
+	}
+
+	library.push(newBook);
+	displayBook(createBookHTML(newBook));
 }
 
 bookForm.addEventListener("submit", createBookObject);

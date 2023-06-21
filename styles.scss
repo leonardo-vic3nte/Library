@@ -88,7 +88,7 @@ body {
 
 header {
 	@include container;
-	margin-top: var(--space-xl);
+	margin-top: var(--space-lg);
 	grid-column: 2/ 3;
 
 	.logo {
@@ -112,7 +112,7 @@ header {
 	}
 
 	#add-book-form {
-		min-width: 200px;
+		min-width: 150px;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
@@ -127,6 +127,7 @@ header {
 			font-size: var(--fs-md);
 			padding: var(--space-xs);
 			border: none;
+			border-radius: var(--space-sm);
 		}
 
 		button {

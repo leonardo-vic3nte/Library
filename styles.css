@@ -73,7 +73,7 @@ body {
 header {
   max-width: var(--container-width);
   margin: 0 auto;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-lg);
   grid-column: 2/3;
 }
 header .logo {
@@ -95,7 +95,7 @@ header .logo {
   margin-bottom: var(--space-sm);
 }
 .side-bar #add-book-form {
-  min-width: 200px;
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -109,6 +109,7 @@ header .logo {
   font-size: var(--fs-md);
   padding: var(--space-xs);
   border: none;
+  border-radius: var(--space-sm);
 }
 .side-bar #add-book-form button {
   cursor: pointer;
