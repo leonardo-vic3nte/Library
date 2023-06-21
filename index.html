@@ -54,6 +54,7 @@
 
 				<label for="read">
 					Have you read it?
+					<input type="hidden" name="isRead" value="false" />
 					<input
 						type="checkbox"
 						name="isRead"
@@ -61,21 +62,10 @@
 						value="true" />
 				</label>
 
-				<button>Submit</button>
+				<button type="submit">Submit</button>
 			</form>
 
-			<div class="cards-container">
-				<div class="card">
-					<h2>Title</h2>
-					<p>Harry potter</p>
-					<h2>Author</h2>
-					<p>Jk Howling</p>
-					<h2>Pages</h2>
-					<p>254</p>
-					<div class="read">Read</div>
-					<div class="remove">Remove</div>
-				</div>
-			</div>
+			<div class="cards-container"></div>
 		</main>
 	</body>
 </html>

@@ -87,7 +87,7 @@ main {
   gap: var(--space-md);
 }
 main #add-book-form {
-  max-width: fit-content;
+  width: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -100,7 +100,7 @@ main #add-book-form label {
 }
 main .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
   gap: var(--space-lg);
   justify-content: center;
 }

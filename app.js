@@ -1,18 +1,38 @@
 const library = [];
 
-function isInLibrary(book) {
-	return library.some((i) => i.title === book.title);
+function isInLibrary(bookToAdd) {
+	return library.some(
+		(bookInLibrary) => bookInLibrary.title === bookToAdd.title
+	);
 }
 
-function Book(title, author, nrPages, read) {
+function Book(title, author, nrPages, isRead) {
 	this.title = title;
 	this.author = author;
 	this.nrPages = nrPages;
-	this.read = read;
+	this.isRead = isRead;
+}
 
-	if (!isInLibrary(this)) {
-		library.push(this);
+function createBookObject(event) {
+	event.preventDefault();
+
+	const formData = new FormData(event.target);
+	const formDataObj = Object.fromEntries(formData.entries());
+
+	const newBook = new Book(
+		formDataObj.title,
+		formDataObj.author,
+		formDataObj.nrPages,
+		formDataObj.isRead
+	);
+
+	if (isInLibrary(newBook)) {
+		alert("Book already exists in library");
+		return;
 	}
+
+	library.push(newBook);
+	createBookCard(newBook);
 }
 
 function createBookCard(book) {
@@ -42,7 +62,7 @@ function createBookCard(book) {
 
 	const readBtn = document.createElement("div");
 	readBtn.classList.add("read");
-	if (book.read) {
+	if (book.isRead === "true") {
 		readBtn.textContent = "Read";
 		readBtn.classList.add("true");
 		readBtn.classList.remove("false");
@@ -62,8 +82,5 @@ function createBookCard(book) {
 	cardsContainer.appendChild(container);
 }
 
-function displayBooks() {
-	library.forEach((book) => createBookCard(book));
-}
-
-displayBooks();
+const bookForm = document.querySelector("#add-book-form");
+bookForm.addEventListener("submit", createBookObject);
