@@ -208,4 +208,17 @@ main .cards-container .card .remove:hover {
   filter: brightness(0.8);
 }
 
+footer {
+  margin-top: var(--space-lg);
+  text-align: center;
+  padding-bottom: var(--space-md);
+}
+footer img {
+  margin-top: var(--space-xs);
+  width: var(--fs-xl);
+}
+footer img:hover {
+  transform: scale(1.2);
+}
+
 /*# sourceMappingURL=styles.css.map */

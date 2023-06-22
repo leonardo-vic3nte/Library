@@ -242,3 +242,18 @@ main {
 		}
 	}
 }
+
+footer {
+	margin-top: var(--space-lg);
+	text-align: center;
+	padding-bottom: var(--space-md);
+
+	img {
+		margin-top: var(--space-xs);
+		width: var(--fs-xl);
+
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+}
