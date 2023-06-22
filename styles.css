@@ -157,7 +157,9 @@ main .add-book-btn {
   font-size: var(--fs-xl);
   font-weight: var(--fw-semi-bold);
   padding: var(--space-xxs) var(--space-xs);
-  color: var(--primary-blue-700);
+  background-color: var(--primary-blue-500);
+  border-color: var(--primary-blue-500);
+  color: var(--neutral-zinc-100);
 }
 main .cards-container {
   display: grid;
