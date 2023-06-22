@@ -5,21 +5,42 @@ const errorMsg = document.querySelector(".error");
 
 const library = [];
 
+function Book(title, author, nrPages, isRead) {
+	this.author = author;
+	this.title = title;
+	this.nrPages = nrPages;
+	this.isRead = isRead;
+}
+
 function isInLibrary(bookToAdd) {
 	return library.some(
 		(bookInLibrary) => bookInLibrary.title === bookToAdd.title
 	);
 }
 
-function Book(title, author, nrPages, isRead) {
-	this.title = title;
-	this.author = author;
-	this.nrPages = nrPages;
-	this.isRead = isRead;
+function toggleReadBtn(event) {
+	const readBtn = event.target;
+
+	if (readBtn.classList.contains("true")) {
+		readBtn.classList.toggle("true");
+		readBtn.innerText = "Not Read";
+	} else {
+		readBtn.classList.toggle("true");
+		readBtn.innerText = "Read";
+	}
 }
 
 function displayBook(book) {
 	cardsContainer.appendChild(book);
+}
+
+function removeCard(event) {
+	currentCard = event.target.parentNode;
+	const bookTitle = currentCard.querySelector(
+		":scope > .book-title"
+	).textContent;
+	library.splice(library.findIndex((book) => book.title === bookTitle));
+	cardsContainer.removeChild(currentCard);
 }
 
 function createBookHTML(book) {
@@ -28,8 +49,10 @@ function createBookHTML(book) {
 
 	const cardTitle = document.createElement("h2");
 	cardTitle.textContent = "Title";
+
 	const title = document.createElement("p");
 	title.textContent = book.title;
+	title.classList.add("book-title");
 	container.appendChild(cardTitle);
 	container.appendChild(title);
 
@@ -49,20 +72,19 @@ function createBookHTML(book) {
 
 	const readBtn = document.createElement("div");
 	readBtn.classList.add("read");
+	readBtn.addEventListener("click", toggleReadBtn);
 	if (book.isRead === "true") {
 		readBtn.textContent = "Read";
 		readBtn.classList.add("true");
-		readBtn.classList.remove("false");
 	} else {
 		readBtn.textContent = "Not Read";
-		readBtn.classList.add("false");
-		readBtn.classList.remove("true");
 	}
 	container.appendChild(readBtn);
 
 	const removeBtn = document.createElement("div");
 	removeBtn.classList.add("remove");
 	removeBtn.textContent = "Remove";
+	removeBtn.addEventListener("click", removeCard);
 	container.appendChild(removeBtn);
 
 	return container;

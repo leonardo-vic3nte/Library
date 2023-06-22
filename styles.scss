@@ -197,6 +197,7 @@ main {
 				margin-top: var(--space-sm);
 				text-align: center;
 				border-radius: var(--space-sm);
+				background-color: var(--accent-red);
 
 				&:hover {
 					filter: brightness(0.8);
@@ -204,10 +205,6 @@ main {
 
 				&.true {
 					background-color: var(--accent-green);
-				}
-
-				&.false {
-					background-color: var(--accent-red);
 				}
 			}
 

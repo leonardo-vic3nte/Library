@@ -171,15 +171,13 @@ main .cards-container .card .read {
   margin-top: var(--space-sm);
   text-align: center;
   border-radius: var(--space-sm);
+  background-color: var(--accent-red);
 }
 main .cards-container .card .read:hover {
   filter: brightness(0.8);
 }
 main .cards-container .card .read.true {
   background-color: var(--accent-green);
-}
-main .cards-container .card .read.false {
-  background-color: var(--accent-red);
 }
 main .cards-container .card .remove {
   cursor: pointer;
