@@ -2,6 +2,8 @@
 const cardsContainer = document.querySelector(".cards-container");
 const bookForm = document.querySelector("#add-book-form");
 const errorMsg = document.querySelector(".error");
+const addBookBtn = document.querySelector(".add-book-btn");
+const formModal = document.querySelector(".form-modal");
 
 const library = [];
 
@@ -18,29 +20,8 @@ function isInLibrary(bookToAdd) {
 	);
 }
 
-function toggleReadBtn(event) {
-	const readBtn = event.target;
-
-	if (readBtn.classList.contains("true")) {
-		readBtn.classList.toggle("true");
-		readBtn.innerText = "Not Read";
-	} else {
-		readBtn.classList.toggle("true");
-		readBtn.innerText = "Read";
-	}
-}
-
 function displayBook(book) {
 	cardsContainer.appendChild(book);
-}
-
-function removeCard(event) {
-	currentCard = event.target.parentNode;
-	const bookTitle = currentCard.querySelector(
-		":scope > .book-title"
-	).textContent;
-	library.splice(library.findIndex((book) => book.title === bookTitle));
-	cardsContainer.removeChild(currentCard);
 }
 
 function createBookHTML(book) {
@@ -108,10 +89,37 @@ function createBookObject(event) {
 		return;
 	} else {
 		errorMsg.classList.remove("true");
+		toggleForm();
 	}
 
 	library.push(newBook);
 	displayBook(createBookHTML(newBook));
 }
 
+function toggleReadBtn(event) {
+	const readBtn = event.target;
+
+	if (readBtn.classList.contains("true")) {
+		readBtn.classList.toggle("true");
+		readBtn.innerText = "Not Read";
+	} else {
+		readBtn.classList.toggle("true");
+		readBtn.innerText = "Read";
+	}
+}
+
+function removeCard(event) {
+	currentCard = event.target.parentNode;
+	const bookTitle = currentCard.querySelector(
+		":scope > .book-title"
+	).textContent;
+	library.splice(library.findIndex((book) => book.title === bookTitle));
+	cardsContainer.removeChild(currentCard);
+}
+
+function toggleForm() {
+	formModal.classList.toggle("active");
+}
+
 bookForm.addEventListener("submit", createBookObject);
+addBookBtn.addEventListener("click", toggleForm);
