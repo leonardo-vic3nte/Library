@@ -144,6 +144,18 @@ header .logo {
   border-bottom: 3px solid var(--accent-red);
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.overlay.active {
+  display: block;
+}
+
 main {
   max-width: var(--container-width);
   margin: 0 auto;

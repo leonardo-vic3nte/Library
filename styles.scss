@@ -1,6 +1,6 @@
 :root {
 	--container-width: 1200px;
-	--default-font: "Outfit", sans-serif;
+	--default-font: 'Outfit', sans-serif;
 	--background-color: hsl(249, 10%, 5%);
 
 	/* Primary Colors */
@@ -166,6 +166,19 @@ header {
 			color: var(--neutral-zinc-100);
 			border-bottom: 3px solid var(--accent-red);
 		}
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	
+	&.active {
+		display: block;
 	}
 }
 
